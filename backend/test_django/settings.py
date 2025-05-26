@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
 
     'products',
+    'pages',
+
 ]
 
 # how reqests are processed dont need to know much about this for now
