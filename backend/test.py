@@ -14,4 +14,5 @@ def recover_flag(team_name: str, captcha_b64: str) -> str:
     return flag_bytes.decode('utf-8', errors='replace')
 
 # Example:
-print(recover_flag("offside", "KwMUKRMrIQ=="))
+print(recover_flag("offside", "VwwTPB4oXQ=="))
+
