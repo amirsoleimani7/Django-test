@@ -1,7 +1,0 @@
-
-mmad : 
-    samurai
-    A13821382s
-
-amir :
-    
