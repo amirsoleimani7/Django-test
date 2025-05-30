@@ -4,23 +4,29 @@
     <h1>
         Hello World 
     </h1>
-
     <p>
-        {{my_text }} , 
-        {{my_number}} , 
-        {{inner.inner_dict}} , 
-    </p>
+       <h3> {{my_text|capfirst|title }}</h3> 
+        {{my_number}} 
+        {{inner.inner_dict}} 
 
+    </p>
     <ul>
-        {% for key,value in inner.items %}    
-        {% if abc == 123% }
-        {% endif% }
-     
-        <li>
-            {{key}} , {{value}}
-        </li>
-        
-        {%endfor%}
-    
+         {% for key,value in inner.items %}    
+           
+            {% if True %}
+                <li>
+                    {{key|cut:'t'}} , {{value|safe}}
+
+                </li>
+            {%elif value == 'this is the inner two'%}
+                <li>
+                    this is the .. 
+                </li>
+            {% else %}
+                <h3>this is something else {{key}}</h3>
+
+            {%endif%}
+
+        {% endfor %}
     </ul>
 {% endblock %}
