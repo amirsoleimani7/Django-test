@@ -1,15 +1,26 @@
 {% extends 'base.html' %}
 
-{% block block2 %}
-
-    <h1>   
+{% block block1 %}
+    <h1>
         Hello World 
     </h1>
-    <h2>
-        {{request.user}}
-    </h2>
+
     <p>
-        this is a template 
+        {{my_text }} , 
+        {{my_number}} , 
+        {{inner.inner_dict}} , 
     </p>
 
+    <ul>
+        {% for key,value in inner.items %}    
+        {% if abc == 123% }
+        {% endif% }
+     
+        <li>
+            {{key}} , {{value}}
+        </li>
+        
+        {%endfor%}
+    
+    </ul>
 {% endblock %}
