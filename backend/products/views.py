@@ -16,7 +16,7 @@ def product_detail_view(request):
         'object' : obj
     }
 
-    
+
     print(f"title is : {obj.title} ,  summary is : {obj.summary}")
 
-    return render(request ,"product/detail.html", context)
+    return render(request ,"products/product_detail.html", context)
