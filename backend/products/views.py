@@ -4,6 +4,26 @@ from django.shortcuts import render , get_object_or_404 , redirect
 from .models import Product
 from .forms import ProdcutForm ,RawProductForm
 
+
+
+def product_list_view(request):
+    queryset = Product.objects.all()
+    
+    context = {
+        'object_list' : queryset
+    }
+
+    return render(request , "products/product_list.html" , context)
+
+
+
+
+
+
+
+
+
+
 def dynamic_lookup_view(request, id):
 
     obj = get_object_or_404(Product , id = id)
