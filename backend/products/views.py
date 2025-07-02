@@ -3,23 +3,33 @@ from .models import Product
 from .forms import ProdcutForm ,RawProductForm
 
 # Create your views here.
+# def product_create_view(request):
+
+#     form  = RawProductForm()    
+
+
+
+#     if request.method == 'POST': 
+#         form  = RawProductForm(request.POST)
+#         if form.is_valid():
+    
+#             print(f"this is test : {form.cleaned_data}")
+#             # print(f"this is test1 : {**form.cleaned_data}")
+#             print(f"cleaned data is: {form.cleaned_data}")
+#             # ** something (passes 'seomthing' as arguemnts ..) 
+#             Product.objects.create(**form.cleaned_data)
+#         else:
+#             form.errors
+#     context = {"form" : form}
+#     return render(request ,"products/product_create.html", context) 
+
+
 def product_create_view(request):
 
-    form  = RawProductForm()    
-
-
-
-    if request.method == 'POST': 
-        form  = RawProductForm(request.POST)
-        if form.is_valid():
-    
-            print(f"this is test : {form.cleaned_data}")
-            # print(f"this is test1 : {**form.cleaned_data}")
-            print(f"cleaned data is: {form.cleaned_data}")
-            # ** something (passes 'seomthing' as arguemnts ..)
-            Product.objects.create(**form.cleaned_data)
-        else:
-            form.errors
+    form  = ProdcutForm(request.POST or None)    
+    if form.is_valid():
+        form.save()
+        form = ProdcutForm()
     context = {"form" : form}
     return render(request ,"products/product_create.html", context) 
 
