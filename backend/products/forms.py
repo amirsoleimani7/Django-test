@@ -20,7 +20,6 @@ class ProdcutForm(forms.ModelForm):
             raise forms.ValidationError("this is not a valid title bruh") 
         if not "NEWS" in title:
             raise forms.ValidationError("this is not a valid title bruh1") 
-        
         return title
 
     def clean_email(self):
