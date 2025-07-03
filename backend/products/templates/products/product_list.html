@@ -7,5 +7,12 @@
 
 {% for instance in object_list %}
     <p>{{instance.id}} - {{instance.title}} - {{instance.summary}} - {{instance.price}}</p>
-{% endfor %}
+{% endfor %} 
+
+
+{% for instance in object_list %}
+    <p>{{instance.id}} - <a href ='{{instance.get_absolute_url}}'>{{instance.title}}</p>
+{% endfor %} 
+
+
 {% endblock %}
