@@ -23,9 +23,9 @@ from pages.views import home_view
 
 
 urlpatterns = [    
+    path('blog/', include('blog.urls')) , 
     path('products/', include('products.urls')) ,
     path('admin/', admin.site.urls),
     path('test/', home_view , name='home') , 
     path('test/test2', home_view , name='home') , 
 ]
-
